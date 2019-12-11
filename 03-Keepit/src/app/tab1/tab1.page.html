@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- List of Text Items -->
+  <ion-list *ngFor="let nota of listadoNotas" detail>
+    <ion-item>
+      <ion-icon slot="start" name="book"></ion-icon>
+      <ion-label>{{nota.data.titulo}}</ion-label>
+      <ion-label>{{nota.data.categoria}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
