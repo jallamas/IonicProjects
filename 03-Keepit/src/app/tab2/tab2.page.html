@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-icon slot="start" padding=32px size="large" name="paper"></ion-icon>
     <ion-title>
-      Tab Two
+      Categorías 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <!-- List of Text Items -->
+  <ion-list *ngFor="let categoria of listadoCategorias">
+    <ion-item>
+      <ion-label>{{categoria.data.titulo}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="crearNotaModal()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>-->
+
+</ion-content>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Nota } from '../models/nota.interface';
+import { NotaDto } from '../models/Nota.dto';
 
 export const collectionName = 'notas';
 
@@ -16,4 +17,9 @@ export class NotasService {
   public getNotas() {
     return this.db.collection<Nota>(collectionName).snapshotChanges();
   }
+
+  public createNota(notaDto:NotaDto):Promise<DocumentReference>{
+    return this.db.collection<Nota>(collectionName).add(notaDto.transformarDto());
+  }
+
 }

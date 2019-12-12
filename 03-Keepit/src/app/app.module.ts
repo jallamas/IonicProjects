@@ -12,22 +12,32 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { NotasService } from './services/notas.service';
+import { NuevaNotaModalPageModule } from './nueva-nota-modal/nueva-nota-modal.module';
+import { NuevaNotaModalPage } from './nueva-nota-modal/nueva-nota-modal.page';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent
+  ],
+  entryComponents: [
+    NuevaNotaModalPage
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.fireBase),
-    AngularFirestoreModule],
+    AngularFirestoreModule,
+    NuevaNotaModalPageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NotasService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {}

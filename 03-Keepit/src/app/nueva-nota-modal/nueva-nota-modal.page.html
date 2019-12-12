@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nueva Nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="addNota()">
+      <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-input type="text" [(ngModel)]="notaDto.titulo" name="titulo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Categoría</ion-label>
+        <ion-input [(ngModel)]="notaDto.categoria" name="categoria"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Descripción</ion-label>
+        <ion-textarea [(ngModel)]="notaDto.descripcion" name="descripcion"></ion-textarea>
+      </ion-item>
+      <ion-button type="submit" block>Guardar</ion-button>
+    </form>
+</ion-content>
