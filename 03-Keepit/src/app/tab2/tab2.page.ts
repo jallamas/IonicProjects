@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Categoria } from '../models/categoria.interface';
 import { FireStoreResponse } from '../models/firestore-response.interface';
 import { CategoriasService } from '../services/categorias.service';
 import { NuevaCategoriaModalPage } from '../nueva-categoria-modal/nueva-categoria-modal.page';
 import { ModalController } from '@ionic/angular';
+import { EditCategoriaModalPage } from '../edit-categoria-modal/edit-categoria-modal.page';
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +14,7 @@ import { ModalController } from '@ionic/angular';
 export class Tab2Page {
 
   listadoCategorias:FireStoreResponse<Categoria>[];
-
+  
   constructor(
     private categoriasService: CategoriasService,
     public modalController: ModalController
@@ -39,6 +40,17 @@ export class Tab2Page {
       component: NuevaCategoriaModalPage,
       componentProps: {
         'titulo': 'Douglas'
+      }
+    });
+    return await modal.present();
+  }
+
+  async updateCategoriaModal(categoriaToEdit:FireStoreResponse<Categoria>) {
+    const modal = await this.modalController.create({
+      component: EditCategoriaModalPage,
+      componentProps: {
+        'id': categoriaToEdit.id,
+        'categoria': categoriaToEdit
       }
     });
     return await modal.present();

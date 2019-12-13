@@ -17,6 +17,8 @@ import { NuevaNotaModalPage } from './nueva-nota-modal/nueva-nota-modal.page';
 import { CategoriasService } from './services/categorias.service';
 import { NuevaCategoriaModalPage } from './nueva-categoria-modal/nueva-categoria-modal.page';
 import { NuevaCategoriaModalPageModule } from './nueva-categoria-modal/nueva-categoria-modal.module';
+import { EditCategoriaModalPageModule } from './edit-categoria-modal/edit-categoria-modal.module';
+import { EditCategoriaModalPage } from './edit-categoria-modal/edit-categoria-modal.page';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NuevaCategoriaModalPageModule } from './nueva-categoria-modal/nueva-cat
   ],
   entryComponents: [
     NuevaNotaModalPage,
-    NuevaCategoriaModalPage
+    NuevaCategoriaModalPage,
+    EditCategoriaModalPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { NuevaCategoriaModalPageModule } from './nueva-categoria-modal/nueva-cat
     AngularFireModule.initializeApp(environment.fireBase),
     AngularFirestoreModule,
     NuevaNotaModalPageModule,
-    NuevaCategoriaModalPageModule
+    NuevaCategoriaModalPageModule,
+    EditCategoriaModalPageModule
   ],
   providers: [
     StatusBar,

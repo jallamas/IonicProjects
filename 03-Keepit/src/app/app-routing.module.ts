@@ -12,6 +12,10 @@ const routes: Routes = [
   },  {
     path: 'nueva-categoria-modal',
     loadChildren: () => import('./nueva-categoria-modal/nueva-categoria-modal.module').then( m => m.NuevaCategoriaModalPageModule)
+  },
+  {
+    path: 'edit-categoria-modal',
+    loadChildren: () => import('./edit-categoria-modal/edit-categoria-modal.module').then( m => m.EditCategoriaModalPageModule)
   }
 
 ];
