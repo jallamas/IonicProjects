@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Categoria } from '../models/categoria.interface';
 import { FireStoreResponse } from '../models/firestore-response.interface';
 import { CategoriasService } from '../services/categorias.service';
+import { NuevaCategoriaModalPage } from '../nueva-categoria-modal/nueva-categoria-modal.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +15,8 @@ export class Tab2Page {
   listadoCategorias:FireStoreResponse<Categoria>[];
 
   constructor(
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
+    public modalController: ModalController
   ) {}
 
   ngOnInit() {
@@ -29,6 +32,16 @@ export class Tab2Page {
           data: categoria.payload.doc.data() as Categoria});
       });        
     });
+  }
+
+  async crearCategoriaModal() {
+    const modal = await this.modalController.create({
+      component: NuevaCategoriaModalPage,
+      componentProps: {
+        'titulo': 'Douglas'
+      }
+    });
+    return await modal.present();
   }
 
 }

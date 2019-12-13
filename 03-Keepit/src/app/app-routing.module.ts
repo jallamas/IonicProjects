@@ -9,7 +9,11 @@ const routes: Routes = [
   {
     path: 'nueva-nota-modal',
     loadChildren: () => import('./nueva-nota-modal/nueva-nota-modal.module').then( m => m.NuevaNotaModalPageModule)
+  },  {
+    path: 'nueva-categoria-modal',
+    loadChildren: () => import('./nueva-categoria-modal/nueva-categoria-modal.module').then( m => m.NuevaCategoriaModalPageModule)
   }
+
 ];
 @NgModule({
   imports: [

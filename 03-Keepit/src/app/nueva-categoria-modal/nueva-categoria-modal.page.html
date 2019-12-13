@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nueva Categoría</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="addCategoria()">
+      <ion-item>
+        <ion-label>Título: </ion-label>
+        <ion-input type="text" [(ngModel)]="categoriaDto.titulo" name="titulo"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="danger" (click)="cerrar()" block>Cancelar</ion-button>
+      <ion-button expand="block" type="submit" block>Guardar</ion-button>
+    </form>
+</ion-content>

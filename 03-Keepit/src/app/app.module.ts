@@ -14,13 +14,17 @@ import { environment } from 'src/environments/environment';
 import { NotasService } from './services/notas.service';
 import { NuevaNotaModalPageModule } from './nueva-nota-modal/nueva-nota-modal.module';
 import { NuevaNotaModalPage } from './nueva-nota-modal/nueva-nota-modal.page';
+import { CategoriasService } from './services/categorias.service';
+import { NuevaCategoriaModalPage } from './nueva-categoria-modal/nueva-categoria-modal.page';
+import { NuevaCategoriaModalPageModule } from './nueva-categoria-modal/nueva-categoria-modal.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   entryComponents: [
-    NuevaNotaModalPage
+    NuevaNotaModalPage,
+    NuevaCategoriaModalPage
   ],
   imports: [
     BrowserModule,
@@ -28,13 +32,15 @@ import { NuevaNotaModalPage } from './nueva-nota-modal/nueva-nota-modal.page';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.fireBase),
     AngularFirestoreModule,
-    NuevaNotaModalPageModule
+    NuevaNotaModalPageModule,
+    NuevaCategoriaModalPageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    NotasService
+    NotasService,
+    CategoriasService
   ],
   bootstrap: [
     AppComponent
