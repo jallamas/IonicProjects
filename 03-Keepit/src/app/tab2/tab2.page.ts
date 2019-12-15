@@ -56,4 +56,8 @@ export class Tab2Page {
     return await modal.present();
   }
 
+  deleteCategoria(id: string) {
+    this.categoriasService.deleteCategoria(id);
+  }
+
 }

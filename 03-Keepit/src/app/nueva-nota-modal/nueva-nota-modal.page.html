@@ -12,7 +12,12 @@
       </ion-item>
       <ion-item>
         <ion-label>Categoría: </ion-label>
-        <ion-input [(ngModel)]="notaDto.categoria" name="categoria"></ion-input>
+        <!--<ion-input [(ngModel)]="notaDto.categoriaId" name="categoriaId" type="hidden"></ion-input>-->
+        <ion-select [(ngModel)]="notaDto.categoriaNombre" interface="popover" name="categoriaNombre">
+          <ion-select-option *ngFor="let categoria of categorias">
+            {{categoria.data.titulo}}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label>Descripción: </ion-label>

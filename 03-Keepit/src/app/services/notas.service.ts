@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Nota } from '../models/nota.interface';
-import { NotaDto } from '../models/Nota.dto';
+import { NotaDto } from '../models/nota.dto';
 
 export const collectionName = 'notas';
 

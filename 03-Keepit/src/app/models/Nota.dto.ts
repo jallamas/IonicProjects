@@ -1,11 +1,12 @@
 export class NotaDto{
-    constructor(public titulo:string, public categoria:string,public descripcion:string){
+    constructor(public titulo:string, public categoriaId: string, public categoriaNombre:string, public descripcion:string){
     }
 
     transformarDto(){
         return{
             titulo:this.titulo,
-            categoria:this.categoria,
+            categoriaId: this.categoriaId,
+            categoriaNombre:this.categoriaNombre,
             descripcion:this.descripcion
         }
     }
