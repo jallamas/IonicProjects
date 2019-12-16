@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'edit-categoria-modal',
     loadChildren: () => import('./edit-categoria-modal/edit-categoria-modal.module').then( m => m.EditCategoriaModalPageModule)
+  },
+  {
+    path: 'signin-facebook',
+    loadChildren: () => import('./signin-facebook/signin-facebook.module').then( m => m.SigninFacebookPageModule)
   }
 
 ];

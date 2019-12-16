@@ -4,6 +4,8 @@ import { Nota } from '../models/nota.interface';
 import { FireStoreResponse } from '../models/firestore-response.interface';
 import { NuevaNotaModalPage } from '../nueva-nota-modal/nueva-nota-modal.page';
 import { ModalController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -20,7 +22,9 @@ export class Tab1Page  implements OnInit{
   
   constructor(
     private notasService: NotasService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private authService : AuthService,
+    private router: Router
     ) {}
 
   ngOnInit() {
@@ -50,4 +54,10 @@ export class Tab1Page  implements OnInit{
     return await modal.present();
   }
 
+  logOut(){
+    this.authService.facebookLogout().then(resp => {
+      this.router.navigate(['/signin-facebook']);
+    });
+
+  }
 }

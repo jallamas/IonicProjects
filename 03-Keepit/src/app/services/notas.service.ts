@@ -15,7 +15,7 @@ export class NotasService {
   ) { }
 
   public getNotas() {
-    return this.db.collection<Nota>(collectionName).snapshotChanges();
+    return this.db.collection<Nota>(collectionName,ref=>ref.where('userId','==',localStorage.getItem('uid'))).snapshotChanges();
   }
 
   public createNota(notaDto:NotaDto):Promise<DocumentReference>{

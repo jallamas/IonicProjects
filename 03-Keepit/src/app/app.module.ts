@@ -19,6 +19,9 @@ import { NuevaCategoriaModalPage } from './nueva-categoria-modal/nueva-categoria
 import { NuevaCategoriaModalPageModule } from './nueva-categoria-modal/nueva-categoria-modal.module';
 import { EditCategoriaModalPageModule } from './edit-categoria-modal/edit-categoria-modal.module';
 import { EditCategoriaModalPage } from './edit-categoria-modal/edit-categoria-modal.page';
+import { AuthService } from './services/auth.service';
+import { SigninFacebookPageModule } from './signin-facebook/signin-facebook.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,17 @@ import { EditCategoriaModalPage } from './edit-categoria-modal/edit-categoria-mo
     AngularFirestoreModule,
     NuevaNotaModalPageModule,
     NuevaCategoriaModalPageModule,
-    EditCategoriaModalPageModule
+    EditCategoriaModalPageModule,
+    SigninFacebookPageModule,
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NotasService,
-    CategoriasService
+    CategoriasService,
+    AuthService
   ],
   bootstrap: [
     AppComponent

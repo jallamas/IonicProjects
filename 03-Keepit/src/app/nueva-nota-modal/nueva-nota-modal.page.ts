@@ -23,7 +23,7 @@ export class NuevaNotaModalPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.notaDto=new NotaDto('','','','');
+    this.notaDto=new NotaDto('','','','',localStorage.getItem('uid'));
     this.loadCategorias();
   }
 

@@ -46,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/signin-facebook',
+    //redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
 ];

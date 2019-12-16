@@ -1,5 +1,5 @@
 export class NotaDto{
-    constructor(public titulo:string, public categoriaId: string, public categoriaNombre:string, public descripcion:string){
+    constructor(public titulo:string, public categoriaId: string, public categoriaNombre:string, public descripcion:string, public userId:string){
     }
 
     transformarDto(){
@@ -7,7 +7,8 @@ export class NotaDto{
             titulo:this.titulo,
             categoriaId: this.categoriaId,
             categoriaNombre:this.categoriaNombre,
-            descripcion:this.descripcion
+            descripcion:this.descripcion,
+            userId:this.userId
         }
     }
 }
